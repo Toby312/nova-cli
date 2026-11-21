@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Learn Python",
+        "description": "Study dictionaries and lists",
+        "status": "pending"
+    },
+    {
+        "id": 2,
+        "title": "Build NOVA",
+        "description": "Implement the task manager",
+        "status": "pending"
+    }
+]

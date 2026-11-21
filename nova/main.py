@@ -4,6 +4,7 @@ import typer
 from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
+from nova.assistant import run_assistant
 
 app = typer.Typer(
     name="nova",
@@ -35,15 +36,7 @@ def start():
     """Start the NOVA assistant."""
 
     show_banner()
-
-    console.print(
-        "\n[bold green]NOVA is ready![/bold green]"
-    )
-
-    console.print(
-        "[dim]Your assistant is waiting for instructions.[/dim]\n"
-    )
-
+    run_assistant()
 
 @app.command()
 def about():
