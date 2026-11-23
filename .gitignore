@@ -1,5 +1,23 @@
+# Virtual environments
 venv/
+.venv/
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# Testing
 .pytest_cache/
+
+# Local application data
+data/*.json

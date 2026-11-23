@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nova-cli-assistant"
+version = "1.0.0"
+description = "An AI-powered personal command-line assistant built with Python."
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "typer",
+    "rich",
+    "python-dotenv",
+    "openai"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[project.scripts]
+nova = "nova.main:app"
+
+[tool.setuptools.packages.find]
+include = ["nova*"]

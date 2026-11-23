@@ -9,6 +9,10 @@ from nova.storage import (
     complete_task,
     delete_task
 )
+from nova.calculator import calculate
+from nova.learning import explain_python
+from nova.ai import get_ai_response
+from nova.ai import get_ai_response, clear_memory
 
 def process_message(message: str) -> str:
     """
@@ -149,6 +153,30 @@ def process_message(message: str) -> str:
             return f"Task {task_id} deleted successfully!"
 
         return f"No task found with ID {task_id}."
+    
+    # Calculator
+    elif normalized_message.startswith("calculate "):
+
+        expression = message[len("calculate "):].strip()
+
+        if not expression:
+            return "Please provide a mathematical expression."
+
+        result = calculate(expression)
+
+        if isinstance(result, str):
+            return result
+
+        return f"The answer is: {result}"
+    
+    elif normalized_message.startswith("explain "):
+
+        topic = message[len("explain "):].strip()
+
+        if not topic:
+            return "Which Python topic would you like me to explain?"
+
+        return explain_python(topic)
 
 
     # Greetings
@@ -188,9 +216,8 @@ def process_message(message: str) -> str:
             "Why do Python programmers prefer dark mode? "
             "Because light attracts bugs!"
         )
-
+    
+    elif normalized_message == "clear memory":
+        return clear_memory()
     else:
-        return (
-            "I'm still learning! I don't understand that "
-            "request yet."
-        )
+     return get_ai_response(message)

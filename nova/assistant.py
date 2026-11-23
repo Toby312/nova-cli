@@ -1,7 +1,7 @@
 
 from rich.console import Console
 from rich.panel import Panel
-
+from rich.markdown import Markdown
 from nova.commands import process_message
 
 console = Console()
@@ -51,6 +51,8 @@ def run_assistant():
                     "- Delete task: task delete | ID\n"
                     "- Check the date\n"
                     "- Check the time\n"
+                    "- Ask me anything!"
+                    "- Clear conversation memory: clear memory\n"
                     "- Type exit to quit",
                     title="NOVA Help",
                     border_style="blue"
@@ -61,5 +63,10 @@ def run_assistant():
         response = process_message(user_input)
 
         console.print(
-            f"\n[bold cyan]NOVA:[/bold cyan] {response}"
-        )
+           Panel(
+        Markdown(response),
+        title="[bold cyan]NOVA[/bold cyan]",
+        border_style="cyan",
+        padding=(1, 2)
+    )
+)
