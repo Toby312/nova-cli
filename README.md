@@ -61,6 +61,12 @@ Built as a hands-on Python and AI development project, NOVA demonstrates modular
 ```text
 nova-cli/
 │
+├── assets/
+│   └── nova-demo.png
+│
+├── data/
+│   └── .gitkeep
+│
 ├── nova/
 │   ├── __init__.py
 │   ├── main.py
@@ -70,9 +76,6 @@ nova-cli/
 │   ├── calculator.py
 │   ├── learning.py
 │   └── storage.py
-│
-├── data/
-│   └── .gitkeep
 │
 ├── tests/
 │   └── test_storage.py
@@ -89,7 +92,7 @@ nova-cli/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nova-cli.git
+git clone https://github.com/Toby312/nova-cli.git
 ```
 
 Replace `YOUR_USERNAME` with your GitHub username.
